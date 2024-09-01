@@ -1,0 +1,29 @@
+{% extends 'servicios/base.html' %}
+
+{% block header %}
+Pedidos: Formulario
+{% endblock header %}
+
+{% block main %}
+<div class="container mt-4">
+    <form method="post" class="needs-validation" novalidate>
+        {% csrf_token %}
+        
+        <!-- Aplicar clases de Bootstrap a cada campo del formulario -->
+        {% for field in form %}
+            <div class="mb-3">
+                {{ field.label_tag }} <!-- Etiqueta del campo -->
+                {{ field }} <!-- Campo de entrada -->
+                {% if field.errors %} <!-- Mostrar errores si existen -->
+                    <div class="invalid-feedback">
+                        {{ field.errors|join:", " }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        
+        <!-- Botón de envío con clases de Bootstrap -->
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+{% endblock main %}

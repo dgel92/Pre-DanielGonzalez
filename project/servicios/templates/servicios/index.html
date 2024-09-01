@@ -1,0 +1,17 @@
+{% extends 'servicios/base.html' %}
+{% load static %}
+
+{% block header %}
+    <h1 style="color: white; text-align: center; font-size: 3rem;">
+        Mis Servicios
+    </h1>
+{% endblock header %}
+
+{% block main %}
+<div class="container mt-4">
+    <img src="{% static 'servicios/image/image-landscape-fill-506407db-ac9a-49b9-830d-8b21aa12fc5c-default_0.jpg' %}" 
+        alt="imagen" 
+        class="img-fluid d-block mx-auto"
+        style="max-width: 100%; height: auto;">
+</div>
+{% endblock main %}
